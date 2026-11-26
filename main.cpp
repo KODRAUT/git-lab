@@ -15,14 +15,16 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     string line;
-    int lines = 0, words = 0;
+    int lines = 0, words = 0, chars = 0;
     while (getline(in, line)) {
         lines++;
+        chars += line.size();
         stringstream ss(line);
         string w;
         while (ss >> w) words++;
     }
     cout << "Lines: " << lines << endl;
     cout << "Words: " << words << endl;
+    cout << "Chars: " << chars << endl;
     return 0;
 }
